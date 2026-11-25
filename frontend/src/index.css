@@ -1,0 +1,436 @@
+:root {
+    --bg: #f4f7f6;
+    --text: #1f2933;
+    --primary: #0b6e63;
+    --primary-rgb: 11, 110, 99;
+    /* teal */
+    --accent: #095a4e;
+    --card-bg: #ffffff;
+    --sidebar-bg: linear-gradient(180deg, #ffffff 0%, #f1faf7 100%);
+    --border-color: rgba(0, 0, 0, 0.06);
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+body.dark {
+    --bg: #071526;
+    --text: #e6f7f5;
+    --primary: #2dd4bf;
+    --primary-rgb: 45, 212, 191;
+    --card-bg: #0f1720;
+    --sidebar-bg: linear-gradient(180deg, #071526 0%, #04121a 100%);
+    --border-color: rgba(255, 255, 255, 0.06);
+}
+
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    color: var(--text);
+}
+
+.sidebar .fs-4 {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.nav-link {
+    color: var(--text);
+}
+
+.nav-link.active {
+    background-color: rgba(var(--primary-rgb), 0.12);
+    color: var(--primary) !important;
+    border-radius: 6px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.kpi-card {
+    background: var(--card-bg);
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(16, 24, 32, 0.06);
+    border-left: 4px solid rgba(var(--primary-rgb), 0.12);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* Ensure button text contrast */
+.btn-primary {
+    color: #ffffff !important;
+}
+
+.btn-outline-secondary {
+    color: var(--text) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Small improvement for dark theme outline buttons */
+body.dark .btn-outline-secondary {
+    color: var(--text) !important;
+    border-color: var(--border-color) !important;
+}
+
+.btn-outline-primary {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+/* Danger outline visibility tweaks */
+.btn-outline-danger {
+    color: #b02a37 !important;
+    border-color: rgba(176, 42, 55, 0.12) !important;
+}
+
+body.dark .btn-outline-danger {
+    color: #ffb4b4 !important;
+    border-color: rgba(255, 80, 80, 0.18) !important;
+}
+
+/* Nav link hover and spacing for clearer menu */
+.sidebar .nav-link {
+    padding: 8px 10px;
+    border-radius: 6px;
+    display: block;
+}
+
+.sidebar .nav-link:hover {
+    color: var(--primary) !important;
+    background-color: rgba(var(--primary-rgb), 0.06);
+}
+
+/* Strong override for Bootstrap active nav-pill color to match theme */
+.sidebar .nav-pills .nav-link.active,
+.sidebar .nav-pills .nav-link.active:focus,
+.sidebar .nav-pills .nav-link.active:hover {
+    background-color: rgba(var(--primary-rgb), 0.16) !important;
+    color: var(--primary) !important;
+    font-weight: 600;
+}
+
+/* Improve contrast for buttons inside cards */
+.kpi-card .btn {
+    color: var(--text);
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+/* Dark theme styles for cards and containers */
+.card {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
+}
+
+.card-header {
+    background-color: rgba(var(--primary-rgb), 0.08);
+    color: var(--text);
+    border-bottom-color: var(--border-color);
+}
+
+.card-body {
+    background-color: var(--card-bg);
+    color: var(--text);
+}
+
+/* Table dark theme - comprehensive support */
+.table {
+    color: var(--text);
+    border-color: var(--border-color);
+    background-color: var(--card-bg);
+}
+
+.table-sm {
+    color: var(--text);
+}
+
+.table thead {
+    background-color: rgba(var(--primary-rgb), 0.12);
+}
+
+.table thead th {
+    background-color: rgba(var(--primary-rgb), 0.12);
+    color: var(--text);
+    border-color: var(--border-color);
+    font-weight: 600;
+}
+
+.table thead th,
+.table td {
+    border-color: var(--border-color);
+    padding: 12px;
+}
+
+.table tbody td {
+    border-color: var(--border-color);
+    color: var(--text);
+    vertical-align: middle;
+}
+
+.table tbody tr {
+    background-color: var(--card-bg);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(var(--primary-rgb), 0.04);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(var(--primary-rgb), 0.08);
+    color: var(--text);
+}
+
+/* Admin table dark theme */
+body.dark .table {
+    background-color: var(--card-bg);
+    color: var(--text);
+}
+
+body.dark .table thead {
+    background-color: rgba(var(--primary-rgb), 0.15);
+    border-bottom: 2px solid rgba(var(--primary-rgb), 0.2);
+}
+
+body.dark .table tbody tr {
+    border-bottom: 1px solid rgba(var(--primary-rgb), 0.05);
+}
+
+body.dark .table-hover tbody tr:hover {
+    background-color: rgba(var(--primary-rgb), 0.1);
+}
+
+/* Form controls dark theme */
+.form-control,
+.form-select {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(var(--primary-rgb), 0.25);
+}
+
+.form-label {
+    color: var(--text);
+}
+
+/* Input placeholders for dark theme */
+.form-control::placeholder,
+.form-select option {
+    color: rgba(var(--primary-rgb), 0.6);
+}
+
+body.dark .form-control::placeholder,
+body.dark .form-select option {
+    color: rgba(230, 247, 245, 0.5) !important;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: rgba(var(--primary-rgb), 0.6);
+}
+
+body.dark .form-control::-webkit-input-placeholder {
+    color: rgba(230, 247, 245, 0.5) !important;
+}
+
+textarea::placeholder,
+textarea::-webkit-input-placeholder {
+    color: rgba(var(--primary-rgb), 0.6);
+}
+
+body.dark textarea::placeholder,
+body.dark textarea::-webkit-input-placeholder {
+    color: rgba(230, 247, 245, 0.5) !important;
+}
+
+/* Recharts dark theme adaptations */
+.recharts-wrapper {
+    filter: invert(0);
+}
+
+body.dark .recharts-surface {
+    background: transparent !important;
+}
+
+body.dark .recharts-text {
+    fill: var(--text) !important;
+}
+
+body.dark .recharts-cartesian-axis-line,
+body.dark .recharts-cartesian-grid-line {
+    stroke: var(--border-color) !important;
+}
+
+body.dark .recharts-legend-wrapper text,
+body.dark .recharts-tooltip,
+body.dark .recharts-tooltip-label,
+body.dark .recharts-tooltip-item {
+    color: var(--text) !important;
+}
+
+/* Recharts tooltip dark theme */
+body.dark .recharts-default-tooltip {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text) !important;
+}
+
+/* Badges and labels */
+.badge {
+    background-color: rgba(var(--primary-rgb), 0.12);
+    color: var(--primary);
+}
+
+.text-muted {
+    color: rgba(var(--primary-rgb), 0.6) !important;
+}
+
+.import-preview-table {
+    max-height: 60vh;
+    overflow: auto;
+}
+
+.import-preview-table table {
+    min-width: 680px;
+}
+
+.import-error-list {
+    max-height: 240px;
+    overflow: auto;
+}
+
+body.dark .text-muted {
+    color: rgba(230, 247, 245, 0.6) !important;
+}
+
+/* List groups dark theme */
+.list-group-item {
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-color: var(--border-color);
+}
+
+.list-group-item:hover {
+    background-color: rgba(var(--primary-rgb), 0.06);
+}
+
+/* Alert and message boxes */
+.alert {
+    background-color: rgba(var(--primary-rgb), 0.08);
+    border-color: rgba(var(--primary-rgb), 0.2);
+    color: var(--text);
+}
+
+/* Link colors */
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgba(var(--primary-rgb), 1);
+    text-decoration: underline;
+}
+
+/* HR dark theme */
+hr {
+    border-color: var(--border-color);
+    opacity: 1;
+}
+
+/* small responsive tweaks */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+/* Theme-aware row highlights (use classes instead of inline colors) */
+.low-stock {
+    background-color: #fff3cd;
+    /* light warning */
+}
+
+.highlight-red {
+    background-color: rgba(255, 107, 107, 0.05);
+}
+
+.highlight-teal {
+    background-color: rgba(45, 212, 191, 0.05);
+}
+
+.highlight-yellow {
+    background-color: rgba(255, 212, 59, 0.05);
+}
+
+.highlight-purple {
+    background-color: rgba(167, 139, 250, 0.05);
+}
+
+/* Dark mode overrides for highlights */
+body.dark .low-stock {
+    background-color: rgba(255, 179, 71, 0.12);
+}
+
+body.dark .highlight-red {
+    background-color: rgba(255, 107, 107, 0.12);
+}
+
+body.dark .highlight-teal {
+    background-color: rgba(45, 212, 191, 0.08);
+}
+
+body.dark .highlight-yellow {
+    background-color: rgba(255, 212, 59, 0.08);
+}
+
+body.dark .highlight-purple {
+    background-color: rgba(167, 139, 250, 0.08);
+}
+
+/* Stronger table background override inside cards (fix Bootstrap white) */
+.card .table,
+.card .table-responsive .table {
+    background-color: var(--card-bg) !important;
+}
+
+/* Ensure table cells inherit correct background in dark mode */
+.card .table td,
+.card .table th {
+    background-color: transparent !important;
+}

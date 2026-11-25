@@ -1,0 +1,115 @@
+{
+  "execution": {
+    "years": [2026, 2027],
+    "model": "qwen3:1.7b",
+    "method": "backend aiAnalysisService.analyzePeriod with extended Ollama timeout",
+    "note": "The browser request timed out at 120 seconds; the same backend analysis service and local Ollama model were run directly with a longer wait. The model response below is unedited."
+  },
+  "analysis": {
+    "meta": {
+      "startYear": 2026,
+      "endYear": 2027,
+      "requestedAt": "2026-11-16T17:09:43.787Z"
+    },
+    "input": {
+      "ctx": {
+        "period": {
+          "startYear": 2026,
+          "endYear": 2027
+        },
+        "first": {
+          "year": 2026,
+          "revenue": 95000,
+          "profit": 4350,
+          "assets": 54000,
+          "profitability": 4.58,
+          "liquidity": null,
+          "asset_turnover": 1.7593
+        },
+        "last": {
+          "year": 2027,
+          "revenue": 90250,
+          "profit": 4000,
+          "assets": 54000,
+          "profitability": 4.58,
+          "liquidity": null,
+          "asset_turnover": 1.7593
+        }
+      },
+      "deltas": {
+        "revenue": -5,
+        "profit": -8.05,
+        "assets": 0,
+        "profitability": 0,
+        "liquidity": null,
+        "asset_turnover": 0
+      },
+      "factor": {
+        "fixedAssets": 54000,
+        "assetTurnover": 1.7593,
+        "revenue": 95002.2,
+        "impactFixed": 950.02,
+        "impactTurn": 950.02,
+        "explanation": "Revenue = FixedAssets * AssetTurnover. При зростанні FixedAssets на 1% до 54540, дохід зміниться на 950.02. При зростанні AssetTurnover на 1% до 1.7769, дохід зміниться на 950.02."
+      }
+    },
+    "result": {
+      "summary": "Рентабельність активів за період 2026–2027 років зберігала високу рентабельність (4.58%), але дохід знизився на 5, а прибуток – на 8.05%. Оборотність активів залишилася незмінною.",
+      "positiveFactors": [],
+      "negativeFactors": [
+        "Зменшення прибутку на 8.05% за аналізований період",
+        "Зменшення виручки на 5.00% за аналізований період",
+        {
+          "factor": "дохід",
+          "impact": -5,
+          "explanation": "Зменшення дохід на 5 є негативним динамічним ефектом."
+        }
+      ],
+      "risks": [
+        {
+          "risk": "зменшення дохід",
+          "description": "Зменшення дохід може впливати на рентабельність компанії, якщо не буде відновлено на високому рівні."
+        }
+      ],
+      "recommendations": [
+        {
+          "recommendation": "Підвищити дохід за допомогою оптимізації цін, збільшення об'єму продажів або впровадження нових продуктів/товарів.",
+          "explanation": "Зменшення дохід вимагає відновлення рівня виручки, щоб зберегти рентабельність активів."
+        }
+      ],
+      "factorAnalysisExplanation": "Сценарна чутливість дохід при збільшенні FixedAssets на 1% до 54540 зміниться на 950.02, а при збільшенні AssetTurnover на 1% до 1.7769 зміниться на 950.02. Таким чином, обидва фактори мають однакову впливову силу на дохід."
+    }
+  },
+  "verification": {
+    "financialRows": {
+      "2026": {
+        "revenue": 95000,
+        "profit": 4350,
+        "assets": 54000,
+        "profitability": 4.58,
+        "liquidity": null,
+        "asset_turnover": 1.7593
+      },
+      "2027": {
+        "revenue": 90250,
+        "profit": 4000,
+        "assets": 54000,
+        "profitability": 4.58,
+        "liquidity": null,
+        "asset_turnover": 1.7593
+      }
+    },
+    "checks": {
+      "revenueChangePercent": -5,
+      "profitChangePercentExact": -8.045977011494253,
+      "profitChangePercentRounded": -8.05,
+      "assetsChangePercent": 0,
+      "profitabilityChangePercent": 0,
+      "liquidity": "not comparable; null in both years",
+      "assetTurnoverChangePercent": 0,
+      "deterministicRevenueFactorPresent": true,
+      "deterministicProfitFactorPresent": true,
+      "unchangedMetricsIncorrectlyFlaggedAsDecreases": false
+    }
+  }
+}

@@ -1,0 +1,20 @@
+# Залежності
+**/node_modules/
+
+# Секрети та локальне середовище
+.env
+.env.*
+!.env.example
+
+# Збірка фронтенду
+/frontend/dist/
+
+# Локальна база та згенеровані звіти
+/backend/db/*.sqlite
+/backend/db/*.sqlite3
+/backend/public/reports/*
+
+# Логи
+*.log
+TEST_CODE_DUMP.md
+PROJECT_CODE_DUMP.md
